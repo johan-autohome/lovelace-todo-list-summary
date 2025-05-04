@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": ["ES2017", "dom", "dom.iterable"],
+    "plugins": [
+      {
+        "name": "ts-lit-plugin"
+      }
+    ],
+    "noEmit": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true, // for lit, enables support for the decorator syntax used by Lit.
+    "useDefineForClassFields": false // for lit, is crucial; otherwise, decorators won’t behave as Lit expects.
+  },
+  "include": ["src/*", "src/**/*"]
+}
