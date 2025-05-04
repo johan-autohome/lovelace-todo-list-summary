@@ -3,8 +3,9 @@ export interface TodoItem {
   summary: string;
   status: 'needs_action' | 'completed' | undefined;
   description?: string;
-  due_date?: string; // 2024-04-10
-  due_datetime?: string; // 2024-04-10 23:00:00
+  due?: string;
+  //   due_date?: string; // 2024-04-10
+  //   due_datetime?: string; // 2024-04-10 23:00:00
 }
 
 /**
@@ -27,8 +28,8 @@ export function sort(items: TodoItem[], sort: 'name' | 'due', ascending: boolean
         if (a.summary === b.summary) return 0;
         return a.summary > b.summary ? asc : -asc;
       case 'due':
-        const a_due = a.due_date ?? a.due_datetime;
-        const b_due = b.due_date ?? b.due_datetime;
+        const a_due = a.due; // due_date ?? a.due_datetime;
+        const b_due = b.due; // due_date ?? b.due_datetime;
         if (a_due === b_due) return 0;
         if (a_due === undefined) return -asc;
         if (b_due === undefined) return asc;

@@ -123,7 +123,7 @@ class TodoListSummaryCard extends LitElement {
     return html`
       <ha-card header="${this._header}">
         ${this._items.map((item) => {
-          const due_date = item.due_date ?? item.due_datetime;
+          const due_date = item.due; // due_date ?? item.due_datetime;
           const due_relative = due_date ? relativeTime(new Date(due_date), this._hass!.locale) : '';
           const status = item.status !== 'completed' && due_date && new Date(due_date) > new Date() ? '' : item.status;
           return html`
