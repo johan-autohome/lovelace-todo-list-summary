@@ -27,6 +27,12 @@ View the card in:
 Network -> Disable cache
 Application -> service workers -> "Bypass for network"
 
+# Update in Home assistant
+
+```bash
+scp dist/card.js piassistant:homeassistant/www/todo-list-summary.js
+```
+
 # Todo
 - editor
 - hacs
